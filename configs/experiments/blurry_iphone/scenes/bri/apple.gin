@@ -1,0 +1,20 @@
+# [Scene-BRI] Overrides for 'apple'.
+MAX_STEPS = 250000
+Config.name = 'moblurf_bri'
+
+NovelView.split = 'val'
+Checkpoint.interval = 10000
+NovelView.interval = 10000
+CrossView.interval = 10000
+KeypointTransfer.interval = 10000
+
+dist_sched/ConstantSchedule.value = 0.01
+entropy_sched/ConstantSchedule.value = 0.005
+
+lr_pose_sched/ExponentialSchedule.initial_value = 5e-5
+lr_pose_sched/ExponentialSchedule.final_value = 1e-6
+lr_pose_sched/ExponentialSchedule.num_steps = %MAX_POSE_STEPS
+
+fine_sched/ConditionSchedule.value = %MAX_POSE_STEPS
+normal_sched/MinConstantSchedule.value = 0.01
+normal_sched/MinConstantSchedule.max_step = %MAX_POSE_STEPS

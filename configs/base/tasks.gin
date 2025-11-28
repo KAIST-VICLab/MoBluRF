@@ -1,0 +1,12 @@
+# Default parameters for individual tasks.
+Text.interval = 500
+KeypointTransfer.split = 'train'
+
+# Default video rendering configurations.
+Video.interval = None
+Video.split = 'train'
+Video.configs = [
+    {'camera_traj': 'lemniscate', 'time_traj': 'fixed'},
+    {'camera_traj': 'fixed', 'time_traj': 'replay'},
+    {'camera_traj': 'lemniscate', 'time_traj': 'replay'},
+]

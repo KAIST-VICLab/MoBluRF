@@ -1,0 +1,7 @@
+DATASET = 'blurry_iphone'
+
+annotate_keypoints.Config.parser_cls = @BlurryiPhoneParser
+annotate_keypoints.Config.skeleton_cls = %SKELETON
+annotate_keypoints.Config.split = 'train'
+BlurryiPhoneParser.dataset = %DATASET
+BlurryiPhoneParser.sequence = %SEQUENCE

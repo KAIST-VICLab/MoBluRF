@@ -1,0 +1,11 @@
+# [Base] Defines the core model architecture.
+Config.model_cls = @MoBluRF
+MoBluRF.use_viewdirs = True
+MoBluRF.viewdirs_embed_cls.use_identity = True
+MoBluRF.points_embed_cls = @points_embed_cls/EmbedPosEnc
+points_embed_cls/EmbedPosEnc.features = 8
+points_embed_cls/EmbedPosEnc.num_freqs = 8
+points_embed_cls/EmbedPosEnc.use_identity = True
+MoBluRF.rgb_embed_key = None
+MoBluRF.use_sample_at_infinity = False
+MoBluRF.num_fine_samples = 128

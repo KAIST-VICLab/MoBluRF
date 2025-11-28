@@ -1,0 +1,48 @@
+# [Stage] Default hyperparameters for the 'mdd' stage.
+STAGE = 'mdd'
+MoBluRF.stage = %STAGE
+Trainer.stage = %STAGE
+Evaluator.stage = %STAGE
+train_step.stage = %STAGE
+
+INIT_LR = 0.001
+FINAL_LR = 0.0001
+BATCH_SIZE = 768
+MAX_POSE_STEPS = 100000
+
+# Common experiment name for these MDD runs.
+Config.name = 'moblurf_mdd'
+
+# Set the main learning rate schedule.
+# Hardcoded to 250k steps as seen in all provided files.
+lr_sched/ExponentialSchedule.initial_value = %INIT_LR
+lr_sched/ExponentialSchedule.final_value = %FINAL_LR
+lr_sched/ExponentialSchedule.num_steps = 250000
+fine_sched/ConditionSchedule.value = %MAX_POSE_STEPS
+
+# Note: use_warp is False in all provided MDD files.
+# Set this to True if you want to train the deformation field.
+MoBluRF.use_warp = False
+
+# Default behavior for loss terms in MDD.
+train_step.use_random_bkgd = True
+train_step.use_depth_loss = False
+train_step.use_dist_loss = True # Most scenes use this.
+
+# Default task intervals for MDD.
+NovelView.split = 'val'
+CrossView.split = 'train'
+Checkpoint.interval = 10000
+Text.interval = 500
+NovelView.interval = 10000
+CrossView.interval = 10000
+KeypointTransfer.interval = 10000
+
+# Defines the list of tasks to run during training.
+Tasks.task_classes = (
+    @Text,
+    @Checkpoint,
+    @NovelView,
+    @CrossView,
+    @Video,
+)

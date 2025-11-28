@@ -1,0 +1,16 @@
+# [Scene-MDD] Overrides for 'space-out'.
+MAX_STEPS = 100000
+
+# Enables depth loss for this scene.
+train_step.use_depth_loss = True
+depth_sched/ConstantSchedule.value = 0.01
+
+dist_sched/ConstantSchedule.value = 0.01
+entropy_sched/ConstantSchedule.value = 0.002
+
+lr_pose_sched/ExponentialSchedule.initial_value = 5e-5
+lr_pose_sched/ExponentialSchedule.final_value = 1e-6
+lr_pose_sched/ExponentialSchedule.num_steps = %MAX_POSE_STEPS
+
+normal_sched/MinConstantSchedule.value = 0.1
+normal_sched/MinConstantSchedule.max_step = 0

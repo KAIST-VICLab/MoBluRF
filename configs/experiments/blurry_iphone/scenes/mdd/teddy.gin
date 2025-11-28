@@ -1,0 +1,18 @@
+# [Scene-MDD] Overrides for 'teddy'.
+MAX_STEPS = 200000
+
+# Overrides the stage default.
+train_step.use_depth_loss = False
+depth_sched/ConstantSchedule.value = 0.01
+
+train_step.use_dist_loss = False
+dist_sched/ConstantSchedule.value = 0.001
+
+entropy_sched/ConstantSchedule.value = 0.002
+
+lr_pose_sched/ExponentialSchedule.initial_value = 5e-5
+lr_pose_sched/ExponentialSchedule.final_value = 1e-6
+lr_pose_sched/ExponentialSchedule.num_steps = %MAX_POSE_STEPS
+
+normal_sched/MinConstantSchedule.value = 0.075
+normal_sched/MinConstantSchedule.max_step = 0.0

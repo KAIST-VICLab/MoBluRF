@@ -1,0 +1,4 @@
+# [Run-MDD] MDD stage for 'spin' scene.
+include 'configs/experiments/blurry_iphone/common.gin'
+include 'configs/stages/mdd.gin'
+include 'configs/experiments/blurry_iphone/scenes/mdd/spin.gin'

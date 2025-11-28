@@ -1,0 +1,4 @@
+# [Run-BRI] BRI stage for 'teddy' scene.
+include 'configs/experiments/blurry_iphone/common.gin'
+include 'configs/stages/bri.gin'
+include 'configs/experiments/blurry_iphone/scenes/bri/teddy.gin'

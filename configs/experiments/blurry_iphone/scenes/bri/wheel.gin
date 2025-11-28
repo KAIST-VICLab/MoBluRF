@@ -1,0 +1,22 @@
+# [Scene-BRI] Overrides for 'teddy'.
+MAX_STEPS = 250000
+Config.name = 'moblurf_bri'
+lr_sched/ExponentialSchedule.num_steps = 250000
+
+NovelView.split = 'val'
+Checkpoint.interval = 10000
+NovelView.interval = 10000
+CrossView.interval = 10000
+KeypointTransfer.interval = 10000
+
+dist_sched/ConstantSchedule.value = 0.01
+entropy_sched/ConstantSchedule.value = 0.002
+
+# Uses a lower learning rate for pose optimization.
+lr_pose_sched/ExponentialSchedule.initial_value = 5e-6
+lr_pose_sched/ExponentialSchedule.final_value = 1e-7
+lr_pose_sched/ExponentialSchedule.num_steps = %MAX_POSE_STEPS
+
+fine_sched/ConditionSchedule.value = %MAX_POSE_STEPS
+normal_sched/MinConstantSchedule.value = 0.075
+normal_sched/MinConstantSchedule.max_step = 25000

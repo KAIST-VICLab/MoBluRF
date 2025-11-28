@@ -1,0 +1,14 @@
+# [Base] Defines trainer and scheduler types.
+Trainer.train_step = @train_step
+Trainer.max_steps = %MAX_STEPS
+
+# Schedulers for main learning rate and pose learning rate.
+TrainSchedules.lr_sched = @lr_sched/ExponentialSchedule()
+TrainSchedules.lr_pose_sched = @lr_pose_sched/ExponentialSchedule()
+
+# Schedulers for various loss terms.
+TrainSchedules.depth_sched = @depth_sched/ConstantSchedule()
+TrainSchedules.dist_sched = @dist_sched/ConstantSchedule()
+TrainSchedules.entropy_sched = @entropy_sched/ConstantSchedule()
+TrainSchedules.fine_sched = @fine_sched/ConditionSchedule()
+TrainSchedules.normal_sched = @normal_sched/MinConstantSchedule()

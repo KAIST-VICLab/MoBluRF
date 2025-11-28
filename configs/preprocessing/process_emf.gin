@@ -1,0 +1,6 @@
+DATASET = 'blurry_iphone'
+
+process_emf.Config.parser_cls = @BlurryiPhoneParser
+BlurryiPhoneParser.dataset = %DATASET
+BlurryiPhoneParser.sequence = %SEQUENCE
+process_emf.Config.splits = ('train',)

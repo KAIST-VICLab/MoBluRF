@@ -1,0 +1,12 @@
+# [Dataset-Common] Includes all base configs for any 'blurry_iphone' experiment.
+
+# Define the dataset macro required by the python code.
+DATASET = 'blurry_iphone'
+
+include 'configs/base/dataset.gin'
+include 'configs/base/model.gin'
+include 'configs/base/optimizer.gin'
+include 'configs/base/tasks.gin'
+
+# Common setting for all iphone dataset scenes.
+Camera.use_center = True

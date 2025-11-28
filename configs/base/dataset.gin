@@ -1,0 +1,6 @@
+# [Base] Defines the structural parameters for a dataset.
+Config.dataset_cls = @BlurryiPhoneDatasetFromAllFrames
+BlurryiPhoneDatasetFromAllFrames.dataset = %DATASET
+BlurryiPhoneDatasetFromAllFrames.sequence = %SEQUENCE
+BlurryiPhoneDatasetFromAllFrames.batch_size = %BATCH_SIZE
+BlurryiPhoneDatasetFromAllFrames.split = 'train'
