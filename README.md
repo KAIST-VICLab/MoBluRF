@@ -16,7 +16,9 @@
         <a href="https://arxiv.org/abs/2312.13528" target='_blank'>
         <img src="https://img.shields.io/badge/arXiv-2312.13528-b31b1b.svg">
         </a>
+        <a href="https://huggingface.co/datasets/ImJongminPark/BlurryIPhone" target="_blank" ><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-BlurryIPhone-ffc107?color=ffc107&logoColor=white"/></a>
         <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/KAIST-VICLab/MoBluRF">
+
 </p>
 
 <p align="center">
@@ -56,7 +58,7 @@ pip install -r requirements.txt
 
 ### Blurry iPhone Dataset
 
-We host the Blurry iPhone Dataset on Dropbox.  
+We host the Blurry iPhone Dataset on Dropbox and the [🤗 Huggingface](https://huggingface.co/datasets/ImJongminPark/BlurryIPhone).  
 You can download our dataset via command-line below:
 
 ```bash
@@ -69,6 +71,9 @@ wget "https://www.dropbox.com/scl/fi/cez7kds7yoc6kdcsptrpq/blurry_iphone.zip?rlk
 
 # Unzip
 unzip data/blurry_iphone.zip -d data/blurry_iphone
+
+# Or download on Huggingface
+git clone https://huggingface.co/datasets/ImJongminPark/BlurryIPhone
 ```
 
 After extraction, the dataset will follow this structure (example for apple):
